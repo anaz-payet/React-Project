@@ -1,7 +1,7 @@
 // src/components/HomePage.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaHeartbeat, FaStethoscope, FaClinicMedical, FaPrescriptionBottleAlt, FaUserMd, FaBriefcaseMedical, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaHeartbeat, FaStethoscope, FaClinicMedical, FaPrescriptionBottleAlt, FaUserMd, FaBriefcaseMedical, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaBars, FaTimes } from 'react-icons/fa';
 import logoImage from '../images/17.jpg';
 import homepageImage from '../images/22.webp';
 
@@ -15,6 +15,8 @@ const services = [
 ];
 
 const HomePage = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="flex flex-col min-h-screen font-sans">
       <header className="bg-green-500 text-white p-4 shadow-md flex justify-between items-center">
@@ -22,18 +24,30 @@ const HomePage = () => {
           <img src={logoImage} alt="Logo" className="h-12 w-12 object-cover rounded-full" />
           <h1 className="text-2xl font-bold">Healthcare Info</h1>
         </div>
-        <nav className="flex space-x-4">
+        <nav className="hidden md:flex space-x-4">
           <Link to="/" className="hover:text-gray-300">Home</Link>
           <Link to="/about" className="hover:text-gray-300">About Us</Link>
           <Link to="/exercise" className="hover:text-gray-300">Exercise</Link>
           <Link to="/diet" className="hover:text-gray-300">Diet</Link>
           <Link to="/contact" className="hover:text-gray-300">Contact</Link>
         </nav>
+        <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+        </button>
       </header>
+      {menuOpen && (
+        <nav className="md:hidden bg-green-500 text-white p-4 space-y-4">
+          <Link to="/" className="block hover:text-gray-300">Home</Link>
+          <Link to="/about" className="block hover:text-gray-300">About Us</Link>
+          <Link to="/exercise" className="block hover:text-gray-300">Exercise</Link>
+          <Link to="/diet" className="block hover:text-gray-300">Diet</Link>
+          <Link to="/contact" className="block hover:text-gray-300">Contact</Link>
+        </nav>
+      )}
       <main className="flex-grow bg-gray-100 p-8 overflow-auto">
-        <div className="bg-white rounded-lg shadow-md p-8 flex items-center justify-between">
-          <div>
-            <h2 className="text-5xl font-bold text-gray-900 mb-4">The Future of Healthcare is Here</h2>
+        <div className="bg-white rounded-lg shadow-md p-8 flex flex-col md:flex-row items-center justify-between">
+          <div className="md:w-2/3">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">The Future of Healthcare is Here</h2>
             <div className="text-gray-700 mb-4 leading-relaxed text-lg">
               <p>At <span className="text-green-500 font-semibold">Healthcare Info</span>, we are committed to providing state-of-the-art medical equipment and comprehensive healthcare services.</p>
               <p>Our goal is to improve patient outcomes and enhance the quality of life for everyone.</p>
@@ -43,7 +57,7 @@ const HomePage = () => {
               Show me the Future
             </button>
           </div>
-          <img src={homepageImage} alt="Healthcare" className="w-1/3 h-64 object-cover rounded-lg shadow-md" />
+          <img src={homepageImage} alt="Healthcare" className="w-full md:w-1/3 h-64 object-cover rounded-lg shadow-md mt-4 md:mt-0" />
         </div>
         <section className="text-center py-10">
           <h1 className="text-4xl font-semibold text-green-600">Our Services</h1>
@@ -51,7 +65,7 @@ const HomePage = () => {
         </section>
         <div className="py-6 bg-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
               {services.map((service, index) => (
                 <div key={index} className="text-center transition transform hover:scale-105">
                   <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-green-600 text-white rounded-md">
@@ -74,11 +88,11 @@ const HomePage = () => {
             <div>
               <h3 className="text-xl font-bold mb-4">Information</h3>
               <ul>
-                <Link to="/" className="hover:text-gray-300">Home</Link>
-                <li><Link to="/about" className="text-gray-400 hover:text-white">About Us</Link></li>
-                <li><Link to="/Exercise" className="text-gray-400 hover:text-white">Exercise</Link></li>
-                <li><Link to="/contact" className="text-gray-400 hover:text-white">Contact Us </Link></li>
-                <li><Link to="/diet" className="text-gray-400 hover:text-white">Diet</Link></li>
+                <li><Link to="/" className="hover:text-gray-300">Home</Link></li>
+                <li><Link to="/about" className="hover:text-gray-300">About Us</Link></li>
+                <li><Link to="/exercise" className="hover:text-gray-300">Exercise</Link></li>
+                <li><Link to="/diet" className="hover:text-gray-300">Diet</Link></li>
+                <li><Link to="/contact" className="hover:text-gray-300">Contact</Link></li>
               </ul>
             </div>
             <div>
@@ -98,8 +112,8 @@ const HomePage = () => {
               </form>
             </div>
           </div>
-          <div className="flex justify-between items-center mt-10">
-            <p className="text-gray-400">&copy; 2024 Healthcare Info. All rights reserved.</p>
+          <div className="flex flex-col md:flex-row justify-between items-center mt-10">
+            <p className="text-gray-400 mb-4 md:mb-0">&copy; 2024 Healthcare Info. All rights reserved.</p>
             <div className="flex space-x-4">
               <Link to="#" className="text-gray-400 hover:text-white"><FaFacebookF /></Link>
               <Link to="#" className="text-gray-400 hover:text-white"><FaTwitter /></Link>

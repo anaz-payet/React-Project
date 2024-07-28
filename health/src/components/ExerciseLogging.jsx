@@ -1,7 +1,7 @@
 // src/components/ExerciseLogging.jsx
 import React, { useReducer, useState, useEffect, useMemo, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaTrashAlt } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaTrashAlt, FaBars, FaTimes } from 'react-icons/fa';
 
 import exerciseImage1 from '../images/16.jpg';
 import exerciseImage2 from '../images/9.jpg';
@@ -55,6 +55,7 @@ const reducer = (state, action) => {
 const ExerciseLogging = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [date, setDate] = useState(new Date().toLocaleDateString());
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -67,6 +68,10 @@ const ExerciseLogging = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!state.exercise || !state.duration) {
+      alert('Please enter exercise description and duration.');
+      return;
+    }
     const newLog = {
       exercise: state.exercise,
       duration: state.duration,
@@ -82,17 +87,29 @@ const ExerciseLogging = () => {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen font-sans">
       <header className="bg-green-500 text-white p-4 shadow-md flex justify-between items-center">
         <h1 className="text-2xl font-bold">Healthcare Info</h1>
-        <nav className="flex space-x-4">
+        <nav className="hidden md:flex space-x-4">
           <Link to="/" className="hover:text-gray-300">Home</Link>
           <Link to="/about" className="hover:text-gray-300">About Us</Link>
           <Link to="/exercise" className="hover:text-gray-300">Exercise</Link>
           <Link to="/diet" className="hover:text-gray-300">Diet</Link>
           <Link to="/contact" className="hover:text-gray-300">Contact</Link>
         </nav>
+        <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+        </button>
       </header>
+      {menuOpen && (
+        <nav className="md:hidden bg-green-500 text-white p-4 space-y-4">
+          <Link to="/" className="block hover:text-gray-300">Home</Link>
+          <Link to="/about" className="block hover:text-gray-300">About Us</Link>
+          <Link to="/exercise" className="block hover:text-gray-300">Exercise</Link>
+          <Link to="/diet" className="block hover:text-gray-300">Diet</Link>
+          <Link to="/contact" className="block hover:text-gray-300">Contact</Link>
+        </nav>
+      )}
       <main className="flex-grow bg-gray-100 p-8 overflow-auto">
         <h1 className="text-4xl font-bold mb-8 text-center">Exercise Logging</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -174,10 +191,10 @@ const ExerciseLogging = () => {
               <h3 className="text-xl font-bold mb-4">Information</h3>
               <ul>
                 <Link to="/" className="hover:text-gray-300">Home</Link>
-                <li><Link to="/about" className="text-gray-400 hover:text-white">About Us</Link></li>
-                <li><Link to="/exercise" className="text-gray-400 hover:text-white">Exercise</Link></li>
-                <li><Link to="/contact" className="text-gray-400 hover:text-white">Contact Us</Link></li>
-                <li><Link to="/diet" className="text-gray-400 hover:text-white">Diet</Link></li>
+                <li><Link to="/about" className="hover:text-gray-300">About Us</Link></li>
+                <li><Link to="/exercise" className="hover:text-gray-300">Exercise</Link></li>
+                <li><Link to="/contact" className="hover:text-gray-300">Contact Us</Link></li>
+                <li><Link to="/diet" className="hover:text-gray-300">Diet</Link></li>
               </ul>
             </div>
             <div>
