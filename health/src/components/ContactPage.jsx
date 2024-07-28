@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaEnvelope, FaPaperPlane, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaEnvelope, FaPaperPlane, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import contactImage from '../images/20.jpg';
 
@@ -9,6 +9,7 @@ const ContactPage = () => {
   const [message, setMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleSubmit = () => {
     if (!name || !email || !message) {
@@ -31,18 +32,30 @@ const ContactPage = () => {
     <div className="flex flex-col min-h-screen bg-gray-100">
       <header className="bg-green-500 text-white p-4 shadow-md flex justify-between items-center">
         <h1 className="text-2xl font-bold">Healthcare Info</h1>
-        <nav className="flex space-x-4">
+        <nav className="hidden md:flex space-x-4">
           <Link to="/" className="hover:text-gray-300">Home</Link>
           <Link to="/about" className="hover:text-gray-300">About Us</Link>
           <Link to="/exercise" className="hover:text-gray-300">Exercise</Link>
           <Link to="/diet" className="hover:text-gray-300">Diet</Link>
           <Link to="/contact" className="hover:text-gray-300">Contact</Link>
         </nav>
+        <button className="md:hidden text-white" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+        </button>
       </header>
-      <main className="flex-grow p-8">
+      {menuOpen && (
+        <nav className="md:hidden bg-green-500 text-white p-4 space-y-4">
+          <Link to="/" className="block hover:text-gray-300">Home</Link>
+          <Link to="/about" className="block hover:text-gray-300">About Us</Link>
+          <Link to="/exercise" className="block hover:text-gray-300">Exercise</Link>
+          <Link to="/diet" className="block hover:text-gray-300">Diet</Link>
+          <Link to="/contact" className="block hover:text-gray-300">Contact</Link>
+        </nav>
+      )}
+      <main className="flex-grow p-4 sm:p-8">
         <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="flex flex-col md:flex-row">
-            <div className="md:w-1/2 p-8">
+            <div className="md:w-1/2 p-4 sm:p-8">
               <h1 className="text-4xl font-bold mb-4 flex items-center">
                 <FaEnvelope className="mr-2" /> Contact Us
               </h1>
@@ -109,7 +122,7 @@ const ContactPage = () => {
                 </button>
               </div>
             </div>
-            <div className="md:w-1/2 p-8 flex items-center justify-center">
+            <div className="md:w-1/2 p-4 sm:p-8 flex items-center justify-center">
               <img src={contactImage} alt="Contact" className="rounded-lg shadow-md object-cover" />
             </div>
           </div>
@@ -125,17 +138,17 @@ const ContactPage = () => {
             <div>
               <h3 className="text-xl font-bold mb-4">Information</h3>
               <ul>
-                <Link to="/" className="hover:text-gray-300">Home</Link>
-                <li><Link to="/about" className="text-gray-400 hover:text-white">About Us</Link></li>
-                <li><Link to="/Exercise" className="text-gray-400 hover:text-white">Exercise</Link></li>
-                <li><Link to="/contact" className="text-gray-400 hover:text-white">Contact Us</Link></li>
-                <li><Link to="/diet" className="text-gray-400 hover:text-white">Diet</Link></li>
+                <li><Link to="/" className="hover:text-gray-300">Home</Link></li>
+                <li><Link to="/about" className="hover:text-gray-300">About Us</Link></li>
+                <li><Link to="/exercise" className="hover:text-gray-300">Exercise</Link></li>
+                <li><Link to="/contact" className="hover:text-gray-300">Contact Us</Link></li>
+                <li><Link to="/diet" className="hover:text-gray-300">Diet</Link></li>
               </ul>
             </div>
             <div>
               <h3 className="text-xl font-bold mb-4">Helpful Links</h3>
               <ul>
-                <li><Link to="/support" className="text-gray-400 hover:underline">Support</Link></li>
+                <li><Link to="/support" className="text-gray-400 hover:underline">Support </Link></li>
                 <li><Link to="/terms" className="text-gray-400 hover:underline">Terms & Condition</Link></li>
                 <li><Link to="/privacy" className="text-gray-400 hover:underline">Privacy Policy</Link></li>
                 <li><Link to="/blog" className="text-gray-400 hover:underline">Blog</Link></li>
@@ -149,8 +162,8 @@ const ContactPage = () => {
               </form>
             </div>
           </div>
-          <div className="flex justify-between items-center mt-10">
-            <p className="text-gray-400">&copy; 2024 Healthcare Info. All rights reserved.</p>
+          <div className="flex flex-col md:flex-row justify-between items-center mt-10">
+            <p className="text-gray-400 mb-4 md:mb-0">&copy; 2024 Healthcare Info. All rights reserved.</p>
             <div className="flex space-x-4">
               <Link to="#" className="text-gray-400 hover:text-white"><FaFacebookF /></Link>
               <Link to="#" className="text-gray-400 hover:text-white"><FaTwitter /></Link>

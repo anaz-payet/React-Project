@@ -44,17 +44,17 @@ const AboutPage = () => {
             </div>
             <div className="bg-white rounded-lg shadow-md p-4">
               <img src={teamMember2} alt="Team Member 2" className="w-full h-40 object-cover rounded-t-lg" />
-              <h3 className="text-xl font-bold mt-4">Ahmed Khalif Mumin</h3>
+              <h3 className="text-xl font-bold mt-4">magac ku dar</h3>
               <p className="text-gray-700">Chief Medical Officer</p>
             </div>
             <div className="bg-white rounded-lg shadow-md p-4">
               <img src={teamMember3} alt="Team Member 3" className="w-full h-40 object-cover rounded-t-lg" />
-              <h3 className="text-xl font-bold mt-4">Sabirin Mohamed Ali</h3>
+              <h3 className="text-xl font-bold mt-4">magac ku dar</h3>
               <p className="text-gray-700">Head of Research</p>
             </div>
             <div className="bg-white rounded-lg shadow-md p-4">
               <img src={teamMember4} alt="Team Member 4" className="w-full h-40 object-cover rounded-t-lg" />
-              <h3 className="text-xl font-bold mt-4">Fadlan Ku dar magac cusub halkan</h3>
+              <h3 className="text-xl font-bold mt-4">magac ku dar</h3>
               <p className="text-gray-700">Position</p>
             </div>
           </div>
