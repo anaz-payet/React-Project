@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaHeartbeat, FaStethoscope, FaClinicMedical, FaPrescriptionBottleAlt, FaUserMd, FaBriefcaseMedical, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
-import logoImage from '../images/2.jpg';
+import logoImage from '../images/17.jpg';
 import homepageImage from '../images/22.webp';
 
 const services = [
