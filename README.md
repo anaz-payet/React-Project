@@ -1,5 +1,5 @@
 # Health-Tracker
-# Healthcare Info - Exercise Logging
+# Healthcare Info - Exercise Logging and Deit Logging 
 
 ## Project Description
 Healthcare Info is a React-based web application designed to help users log their exercises and track their progress. It provides an intuitive interface for entering exercise details, including descriptions and durations, and stores these logs locally in the browser. The application also showcases related exercise images, enhancing the user experience.
@@ -29,7 +29,7 @@ To get started with the project, follow these steps:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/username/healthcare-info.git
+   git clone https://github.com/anaz-payet/React-Project.git
 2.Navigate to the project directory:
     cd health
 3.Install dependencies:
