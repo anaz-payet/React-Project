@@ -31,9 +31,9 @@ To get started with the project, follow these steps:
    ```bash
    git clone https://github.com/anaz-payet/React-Project.git
 2.Navigate to the project directory:
-    cd health
+   ** cd health**
 3.Install dependencies:
-npm install
+**npm install**
 The application will be available at http://localhost:3000.
 Contact
 For any questions or suggestions, please feel free to contact us at [anazabdi2024@gmail.com].
