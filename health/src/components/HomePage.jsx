@@ -1,4 +1,3 @@
-// src/components/HomePage.jsx
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaHeartbeat, FaStethoscope, FaClinicMedical, FaPrescriptionBottleAlt, FaUserMd, FaBriefcaseMedical, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaBars, FaTimes } from 'react-icons/fa';
@@ -47,11 +46,11 @@ const HomePage = () => {
       <main className="flex-grow bg-gray-100 p-8 overflow-auto">
         <div className="bg-white rounded-lg shadow-md p-8 flex flex-col md:flex-row items-center justify-between">
           <div className="md:w-2/3">
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">The Future of Healthcare is Here</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Keep Track of Your Fitness Journey</h2>
             <div className="text-gray-700 mb-4 leading-relaxed text-lg">
-              <p>At <span className="text-green-500 font-semibold">Healthcare Info</span>, we are committed to providing state-of-the-art medical equipment and comprehensive healthcare services.</p>
-              <p>Our goal is to improve patient outcomes and enhance the quality of life for everyone.</p>
-              <p>Join us on this journey towards a <span className="text-green-500 font-semibold">healthier future</span>.</p>
+              <p>At <span className="text-green-500 font-semibold">Healthcare Info</span>, we help you stay on top of your fitness goals with comprehensive exercise logging and tracking.</p>
+              <p>Our goal is to support your fitness journey and help you achieve your health objectives.</p>
+              <p>Join us in staying fit and healthy.</p>
             </div>
             <button className="bg-green-500 text-white px-4 py-2 rounded shadow hover:bg-green-700 animate-bounce">
               Show me the Future

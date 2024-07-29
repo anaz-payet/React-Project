@@ -2,10 +2,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn,FaBars } from 'react-icons/fa';
-import teamMember1 from '../images/4.jpg';
-import teamMember2 from '../images/5.jpg';
-import teamMember3 from '../images/6.jpg';
-import teamMember4 from '../images/7.jpg';
+import teamMember1 from '../images/18.jpg';
+import teamMember2 from '../images/19.jpg';
+import teamMember3 from '../images/18.jpg';
+import teamMember4 from '../images/18.jpg';
 
 const AboutPage = () => {
   return (
@@ -44,17 +44,17 @@ const AboutPage = () => {
             </div>
             <div className="bg-white rounded-lg shadow-md p-4">
               <img src={teamMember2} alt="Team Member 2" className="w-full h-40 object-cover rounded-t-lg" />
-              <h3 className="text-xl font-bold mt-4">magac ku dar</h3>
+              <h3 className="text-xl font-bold mt-4">Shukri Ali Ahmed</h3>
               <p className="text-gray-700">Chief Medical Officer</p>
             </div>
             <div className="bg-white rounded-lg shadow-md p-4">
               <img src={teamMember3} alt="Team Member 3" className="w-full h-40 object-cover rounded-t-lg" />
-              <h3 className="text-xl font-bold mt-4">magac ku dar</h3>
+              <h3 className="text-xl font-bold mt-4">Muse Ahmed Adan</h3>
               <p className="text-gray-700">Head of Research</p>
             </div>
             <div className="bg-white rounded-lg shadow-md p-4">
               <img src={teamMember4} alt="Team Member 4" className="w-full h-40 object-cover rounded-t-lg" />
-              <h3 className="text-xl font-bold mt-4">magac ku dar</h3>
+              <h3 className="text-xl font-bold mt-4">Abdiaziz Ali Ibrahim</h3>
               <p className="text-gray-700">Position</p>
             </div>
           </div>
