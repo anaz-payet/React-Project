@@ -27,11 +27,12 @@ const AboutPage = () => {
         <section className="p-4 sm:p-8">
           <h2 className="text-2xl font-bold mb-4">Our Mission</h2>
           <p className="text-gray-700 mb-4">
-            Welcome to Healthcare Info. We are dedicated to providing the best healthcare services and medical equipment to ensure your health and well-being. Our team of experts is here to support you with the latest advancements in healthcare technology.
+            Welcome to Healthcare Info. We are dedicated to providing the best healthcare services  <br />
+            and medical equipment to ensure your health and well-being.  <br />Our team of experts is here to support you with the latest advancements in healthcare technology.
           </p>
           <h2 className="text-2xl font-bold mb-4">Our Values</h2>
           <p className="text-gray-700 mb-4">
-            We believe in quality, innovation, and customer satisfaction. Our goal is to improve healthcare outcomes by providing cutting-edge medical solutions.
+            We believe in quality, innovation, and customer satisfaction. <br /> Our goal is to improve healthcare outcomes by providing cutting-edge medical solutions.
           </p>
         </section>
         <section className="p-4 sm:p-8 bg-gray-50">
