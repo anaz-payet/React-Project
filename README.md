@@ -11,15 +11,18 @@ Healthcare Info is a React-based web application designed to help users log thei
 - **Responsive Design:** The application is designed to be responsive and user-friendly on various devices.
 - **Navigation:** Easy navigation between different sections such as Home, About Us, Exercise, Diet, and Contact.
 
-
 ## Technologies Used
 - **React:** For building the user interface.
 - **React Router:** For navigation between different sections.
 - **Tailwind CSS:** For styling the application.
 - **FontAwesome:** For icons used in the application.
 - **LocalStorage:** For storing exercise logs.
-- **React Hooks (useState, useReducer ,useNavigate,useEffect):
-  ** For managing component state and side effects.
+- **React Hooks:**
+  - **useState:** For managing component state.
+  - **useReducer:** For managing complex state logic.
+  - **useEffect:** For performing side effects in functional components.
+  - **useMemo:** For memoizing expensive calculations.
+  - **useCallback:** For memoizing callback functions.
 
 ## Installation
 To get started with the project, follow these steps:
